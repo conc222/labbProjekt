@@ -1,1 +1,90 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+/*färger:
+blåtyp: 21, 66, 132
+
+lilablå: 66, 54, 111
+
+mitten: 113, 42, 88
+
+rödlila: 161, 29, 66
+
+rödtyp: 204, 18, 46
+*/
+
+body {
+  margin: 0;
+  font-family: 'Nunito', 'sans-serif';
+  font-size: 18px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #42366f;
+  padding: 1em 0;
+  opacity: 80%;
+  transition: opacity 750ms;
+
+  header:hover {
+    opacity: 100%;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a.logo {
+    font-weight: bold;
+    color: white;
+  }
+  a.logo:hover{
+    color: white;
+    text-decoration: none;
+  }
+
+  nav {
+    float: right;
+
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        display: flex;
+
+
+          ul a:hover {
+            color: #cc122e
+          }
+
+            li a {
+              padding: 1em;
+              color: white;
+
+                &:hover {
+                  color: white;
+                  text-decoration: none;
+                }
+            }
+      }
+  }
+}
+
+h1 {
+  margin-top: 2em;
+}
+
+/*färger:
+blåtyp: 21, 66, 132
+
+lilablå: 66, 54, 111
+
+mitten: 113, 42, 88
+
+rödlila: 161, 29, 66
+
+rödtyp: 204, 18, 46
+*/
