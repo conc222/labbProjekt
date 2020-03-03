@@ -1,34 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Fotspelare} from '../../models/fotspelare';
+import { FotspelareListaService} from '../services/fotspelare-lista.service';
 
 @Component({
   selector: 'app-spelare',
   templateUrl: './spelare.component.html',
   styleUrls: ['./spelare.component.scss']
 })
-export class SpelareComponent implements OnInit {
-  name = 'Lionel Messi';
-  public messi: Fotspelare;
+constructor(private _name?: string, private _age?: number, private _personnr?: number, private _land?: string, private _position?: number) {}
 
-  constructor() {
-    this.messi = new Fotspelare();
-    this.messi.name = 'Lionel Messi';
-    this.messi.nummer = 10;
-    this.messi.age = 33;
-    this.messi.land = 'Argentina';
-    this.messi.personnr = 1;
-    this.messi.position = 'Forward';
+export class SpelareComponent implements OnInit {
+  spelare: Fotspelare[] = {
+    name = '',
+    age = null,
+
+  }
+
+  constructor(private spelareService: FotspelareListaService) {
+
 
   }
 
   ngOnInit(): void {
+    this.spelare = this.spelareService.getSpelare();
   }
 
-  sayName() {
-    console.log('Hello from' + this.name);
-  }
-
-  showLand() {
-    return 'Argentina';
-  }
 }

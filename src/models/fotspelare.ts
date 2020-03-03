@@ -1,8 +1,24 @@
 export class Fotspelare {
 
-  // tslint:disable-next-line:variable-name max-line-length
-  constructor(private _name?: string, private _age?: number, private _personnr?: number, _land?: string, _position?: string, _nummer?: number) {}
+  // tslint:disable-next-line:variable-name
+  constructor(private _name?: string, private _age?: number, private _personnr?: number, private _land?: string, private _position?: number) {}
 
+
+  get land(): string {
+    return this._land;
+  }
+
+  set land(value: string) {
+    this._land = value;
+  }
+
+  get position(): number {
+    return this._position;
+  }
+
+  set position(value: number) {
+    this._position = value;
+  }
 
   get name(): string {
     return this._name;
@@ -26,29 +42,5 @@ export class Fotspelare {
 
   set personnr(value: number) {
     this._personnr = value;
-  }
-
-  get land(): string {
-    return this._land;
-  }
-
-  set land(value) {
-    this.land = value;
-  }
-
-  get position() {
-    return this._position;
-  }
-
-  set position(value: string) {
-    this.position = value;
-  }
-
-  get nummer() {
-    return this._nummer;
-  }
-
-  set nummer(value: number) {
-    this.nummer = value;
   }
 }
