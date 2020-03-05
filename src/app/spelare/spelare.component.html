@@ -1,9 +1,10 @@
-<p>spelare works!</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 <p>
   <ul>
   <li *ngFor="let f of spelare">
-    {{f.name}} ålder {{f.age}}
+    <a routerLink="/detalj-spelare/{{f.name}}"> {{f.name}} </a> ålder {{f.age}}
   </li>
 </ul>
 
+<a routerLink="/addspelare">Lägg till spelare</a>

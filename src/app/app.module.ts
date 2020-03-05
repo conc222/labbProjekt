@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule} from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +11,9 @@ import { DetaljSpelareComponent } from './detalj-spelare/detalj-spelare.componen
 import { OmossComponent } from './omoss/omoss.component';
 import { ArenaComponent } from './arena/arena.component';
 import { PartnersComponent } from './partners/partners.component';
+import {FotspelareListaService} from './services/fotspelare-lista.service';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { AddSpelareComponent } from './add-spelare/add-spelare.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +23,17 @@ import { PartnersComponent } from './partners/partners.component';
     DetaljSpelareComponent,
     OmossComponent,
     ArenaComponent,
-    PartnersComponent
+    PartnersComponent,
+    NotfoundComponent,
+    AddSpelareComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [FotspelareListaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

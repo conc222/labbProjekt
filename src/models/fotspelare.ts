@@ -1,7 +1,7 @@
 export class Fotspelare {
 
   // tslint:disable-next-line:variable-name
-  constructor(private _name?: string, private _age?: number, private _personnr?: number, private _land?: string, private _position?: number) {}
+  constructor(private _name?: string, private _age?: number, private _personnr?: number, private _land?: string, private _position?: number, private _bild?: string) {}
 
 
   get land(): string {
@@ -42,5 +42,13 @@ export class Fotspelare {
 
   set personnr(value: number) {
     this._personnr = value;
+  }
+
+  get bild(): string {
+    return this._bild;
+  }
+
+  set bild(value: string) {
+    this._bild = value;
   }
 }

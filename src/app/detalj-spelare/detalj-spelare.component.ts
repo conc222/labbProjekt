@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FotspelareListaService} from '../services/fotspelare-lista.service';
+import { Fotspelare} from '../../models/fotspelare';
+import { ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-detalj-spelare',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetaljSpelareComponent implements OnInit {
 
-  constructor() { }
+  spelare: Fotspelare;
 
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute, private fotspelareService: FotspelareListaService) { }
+
+  ngOnInit() {
+    const name = this.route.snapshot.paramMap.get('name');
+    this.fotspelareService.getSpelareName(name).subscribe(f => this.spelare = f);
+    console.log(name);
   }
 
 }

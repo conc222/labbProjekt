@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { Fotspelare} from '../../models/fotspelare';
 import { FotspelareListaService} from '../services/fotspelare-lista.service';
+import { HttpClient} from '@angular/common/http';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-spelare',
@@ -9,17 +11,14 @@ import { FotspelareListaService} from '../services/fotspelare-lista.service';
 })
 
 export class SpelareComponent implements OnInit {
+  spelare: Fotspelare[];
 
+  constructor(private spelareService: FotspelareListaService) { }
 
-  constructor(private spelareService: FotspelareListaService) {
-  }
-
-  ngOnInit(): void {
-
-  }
-
-  addSpelare(f: Fotspelare) {
-
+  ngOnInit() {
+    this.spelareService.getSpelare().subscribe(f => {
+      this.spelare = f;
+    });
   }
 
 }
