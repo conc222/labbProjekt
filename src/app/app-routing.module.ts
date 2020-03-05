@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'omOss', component: OmossComponent},
   {path: 'addspelare', component: AddSpelareComponent},
   {path: 'spelare', component: SpelareComponent},
-  {path: 'details/:name', component: DetaljSpelareComponent}
+  {path: 'detalj-spelare/:name', component: DetaljSpelareComponent}
 
 
 ];

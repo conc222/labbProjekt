@@ -1,0 +1,58 @@
+does this work
+<form #spelForm="ngForm" (submit)="onSubmit(spelForm)">
+  <label>Name</label><br>
+  <input type="text" [(ngModel)]="newSpelare.name" name = "name" #spelareName ="ngModel" required minlength="2" [ngClass]="{'error' : spelareName.errors && spelareName.touched}"/>
+  <span *ngIf="(spelareName.dirty || spelareName.touched) && spelareName.hasError('required')" class="error">
+    *
+  </span>
+  <span *ngIf="(spelareName.dirty || spelareName.touched) && spelareName.hasError('minLength')" class="error">
+    *
+  </span>
+  <br><br>
+  <label>Ålder</label><br>
+  <input type="number" [(ngModel)]="newSpelare.age" name="age" #spelareAge ="ngModel" required minlength="2" [ngClass]="{'error' : spelareAge.errors && spelareAge.touched}"/>
+  <span *ngIf="(spelareAge.dirty || spelareAge.touched) && spelareAge.hasError('required')" class="error">
+    *
+  </span>
+  <span *ngIf="(spelareAge.dirty || spelareAge.touched) && spelareAge.hasError('minLength')" class="error">
+    *
+  </span>
+  <br><br>
+  <label>Person nummer</label><br>
+  <input type="number" [(ngModel)]="newSpelare.personnr" name="personnr" #spelarePersonnr ="ngModel" required minlength="1" [ngClass]="{'error' : spelarePersonnr.errors && spelarePersonnr.touched}"/>
+  <span *ngIf="(spelarePersonnr.dirty || spelarePersonnr.touched) && spelarePersonnr.hasError('required')" class="error">
+    *
+  </span>
+  <span *ngIf="(spelarePersonnr.dirty || spelarePersonnr.touched) && spelarePersonnr.hasError('minLength')" class="error">
+    *
+  </span>
+  <br><br>
+  <label>Land</label><br>
+  <input type="text" [(ngModel)]="newSpelare.land" name="land" #spelareLand ="ngModel" required minlength="3" [ngClass]="{'error' : spelareLand.errors && spelareLand.touched}"/>
+  <span *ngIf="(spelareLand.dirty || spelareLand.touched) && spelareLand.hasError('required')" class="error">
+    *
+  </span>
+  <span *ngIf="(spelareLand.dirty || spelareLand.touched) && spelareLand.hasError('minLength')" class="error">
+    *
+  </span><br><br>
+  <label>Position</label><br>
+  <input type="text" [(ngModel)]="newSpelare.position" name="position" #spelarePosition ="ngModel" required minlength="1" [ngClass]="{'error' : spelarePosition.errors && spelarePosition.touched}"/>
+  <span *ngIf="(spelarePosition.dirty || spelarePosition.touched) && spelarePosition.hasError('required')" class="error">
+    *
+  </span>
+  <span *ngIf="(spelarePosition.dirty || spelarePosition.touched) && spelarePosition.hasError('minLength')" class="error">
+    *
+  </span>
+  <br><br>
+  <label>Bild</label><br>
+  <input type="text" [(ngModel)]="newSpelare.bild" name="bild" #spelareBild ="ngModel" required minlength="1" [ngClass]="{'error' : spelareBild.errors && spelareBild.touched}"/>
+  <span *ngIf="(spelareBild.dirty || spelareBild.touched) && spelareBild.hasError('required')" class="error">
+    *
+  </span>
+  <span *ngIf="(spelareBild.dirty || spelareBild.touched) && spelareBild.hasError('minLength')" class="error">
+    *
+  </span>
+  <br><br>
+
+  <button [disabled]="!spelForm.form.valid">Send it</button>
+</form>
