@@ -35,9 +35,9 @@ export class AddSpelareComponent implements OnInit {
     if (!valid) {
       console.log('Not valid');
     } else {
-      this.spelareService.addSpelare(value).then(
-        this.theForm.reset()
-      );
+      // this.spelareService.addSpelare(value).then(
+      //  this.theForm.reset()
+      // );
     }
   }
 

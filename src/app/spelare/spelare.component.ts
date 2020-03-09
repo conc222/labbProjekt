@@ -15,7 +15,7 @@ import { Router} from '@angular/router';
 export class SpelareComponent implements OnInit {
   spelare: Array<any>;
 
-  constructor(private spelareService: FotspelareListaService, private firebaseCommands: FirebaseCommandsService, private route: Router) { }
+  constructor(private spelareService: FotspelareListaService,  private route: Router) { }
 
   ngOnInit() {
     this.spelareService.getSpelare().subscribe(result => {
