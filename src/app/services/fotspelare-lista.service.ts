@@ -2,31 +2,43 @@ import { Injectable } from '@angular/core';
 import { Fotspelare} from '../../models/fotspelare';
 import { Observable} from 'rxjs';
 import { of } from 'rxjs';
+import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FotspelareListaService {
-  spelare: Fotspelare[];
+  spelare: Observable<any[]>;
+  spelareDoc: AngularFirestoreDocument<Fotspelare>;
+  spelareOne: Observable<any>;
 
-  constructor() {
-    this.spelare = [
+  constructor(private afs: AngularFirestore) {
+    this.spelare = afs.collection('Fotspelare').snapshotChanges().pipe(
+      map(j => j.map(
+        a => {
+          const data = a.payload.doc.data() as Fotspelare;
+          const id = a.payload.doc.id;
+          return {id, ...data};
+    }
+  ))
+    );
+    /* this.spelare = [
       new Fotspelare('Lionel', 35, 1, 'Argentina', 10)
-    ];
+    ]; */
+
   }
   getSpelare(): Observable<Fotspelare[]> {
-    return of (this.spelare);
+    return (this.spelare);
   }
   addSpelare(f: Fotspelare) {
-    this.spelare.push(f);
+    this.afs.collection('Fotspelare').add(f);
   }
 
-  getSpelareName(name: string): Observable<Fotspelare> {
-    for (const entry of this.spelare) {
-      if (entry.name === name) {
-        return of(entry);
-      }
-    }
-    return null;
+  getSpelareName(id: string): Observable<Fotspelare> {
+    this.spelareDoc = this.afs.doc<Fotspelare>('Fotspelare/${id}');
+    this.spelareOne = this.spelareDoc.valueChanges();
+
+    return this.spelareOne;
   }
 }

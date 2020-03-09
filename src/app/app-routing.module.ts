@@ -13,14 +13,14 @@ import { DetaljSpelareComponent} from './detalj-spelare/detalj-spelare.component
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'arena', component: ArenaComponent},
   {path: 'partners', component: PartnersComponent},
   {path: 'omOss', component: OmossComponent},
   {path: 'addspelare', component: AddSpelareComponent},
   {path: 'spelare', component: SpelareComponent},
-  {path: 'detalj-spelare/:name', component: DetaljSpelareComponent}
-
-
+  {path: 'detalj-spelare/:name', component: DetaljSpelareComponent},
+  {path: '**', component: NotfoundComponent}
 ];
 
 @NgModule({

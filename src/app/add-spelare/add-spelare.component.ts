@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { Fotspelare} from '../../models/fotspelare';
 import { FotspelareListaService} from '../services/fotspelare-lista.service';
+import { FirebaseCommandsService} from '../services/firebase-commands.service';
 import { HttpClient} from '@angular/common/http';
 import {NgForm} from '@angular/forms';
 
@@ -34,9 +35,9 @@ export class AddSpelareComponent implements OnInit {
     if (!valid) {
       console.log('Not valid');
     } else {
-      value.bild = '';
-      this.spelareService.addSpelare(value);
-      this.theForm.reset();
+      this.spelareService.addSpelare(value).then(
+        this.theForm.reset()
+      );
     }
   }
 

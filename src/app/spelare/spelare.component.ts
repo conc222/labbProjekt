@@ -3,6 +3,8 @@ import { Fotspelare} from '../../models/fotspelare';
 import { FotspelareListaService} from '../services/fotspelare-lista.service';
 import { HttpClient} from '@angular/common/http';
 import {NgForm} from '@angular/forms';
+import {FirebaseCommandsService} from '../services/firebase-commands.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-spelare',
@@ -11,14 +13,18 @@ import {NgForm} from '@angular/forms';
 })
 
 export class SpelareComponent implements OnInit {
-  spelare: Fotspelare[];
+  spelare: Array<any>;
 
-  constructor(private spelareService: FotspelareListaService) { }
+  constructor(private spelareService: FotspelareListaService, private firebaseCommands: FirebaseCommandsService, private route: Router) { }
 
   ngOnInit() {
-    this.spelareService.getSpelare().subscribe(f => {
-      this.spelare = f;
+    this.spelareService.getSpelare().subscribe(result => {
+      this.spelare = result;
     });
+  }
+
+  visaDetaljSpelare(spelare) {
+    this.route.navigate(['/detalj-spelare/' + spelare.payload.doc.id]);
   }
 
 }

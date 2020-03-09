@@ -15,6 +15,11 @@ import {FotspelareListaService} from './services/fotspelare-lista.service';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AddSpelareComponent } from './add-spelare/add-spelare.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule} from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +36,10 @@ import { AddSpelareComponent } from './add-spelare/add-spelare.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [FotspelareListaService],
   bootstrap: [AppComponent]
