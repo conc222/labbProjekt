@@ -4,6 +4,9 @@ import { Observable} from 'rxjs';
 import { of } from 'rxjs';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {map} from 'rxjs/operators';
+import { AngularFireAuth } from '@angular/fire/auth';
+
+
 
 
 @Injectable({
@@ -39,3 +42,4 @@ export class FotspelareListaService {
     return this.spelareOne;
   }
 }
+

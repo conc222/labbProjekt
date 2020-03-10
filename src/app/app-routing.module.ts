@@ -5,12 +5,10 @@ import { PartnersComponent} from './partners/partners.component';
 import { OmossComponent} from './omoss/omoss.component';
 import { HomeComponent} from './home/home.component';
 import { SpelareComponent} from './spelare/spelare.component';
-import { ArenaComponent} from './arena/arena.component';
-import { PartnersComponent} from './partners/partners.component';
-import { OmossComponent} from './omoss/omoss.component';
 import { NotfoundComponent} from './notfound/notfound.component';
 import { AddSpelareComponent} from './add-spelare/add-spelare.component';
 import { DetaljSpelareComponent} from './detalj-spelare/detalj-spelare.component';
+import {LoginComponent} from './login/login.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -21,7 +19,8 @@ const routes: Routes = [
   {path: 'addspelare', component: AddSpelareComponent},
   {path: 'spelare', component: SpelareComponent},
   {path: 'detalj-spelare/:name', component: DetaljSpelareComponent},
-  {path: '**', component: NotfoundComponent}
+  {path: 'login', component: LoginComponent},
+  {path: '**', component: NotfoundComponent},
 ];
 
 @NgModule({

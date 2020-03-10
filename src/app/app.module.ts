@@ -19,6 +19,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule} from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { environment } from '../environments/environment';
     ArenaComponent,
     PartnersComponent,
     NotfoundComponent,
-    AddSpelareComponent
+    AddSpelareComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
