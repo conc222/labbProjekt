@@ -5,6 +5,7 @@ import { of } from 'rxjs';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {map} from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,9 +24,6 @@ export class FotspelareListaService {
     }
   ))
     );
-    /* this.spelare = [
-      new Fotspelare('Lionel', 35, 1, 'Argentina', 10)
-    ]; */
 
   }
   getSpelare(): Observable<Fotspelare[]> {
@@ -36,9 +34,8 @@ export class FotspelareListaService {
   }
 
   getSpelareName(id: string): Observable<Fotspelare> {
-    this.spelareDoc = this.afs.doc<Fotspelare>('Fotspelare/${id}');
+    this.spelareDoc = this.afs.doc<Fotspelare>('Fotspelare/' + id);
     this.spelareOne = this.spelareDoc.valueChanges();
-
     return this.spelareOne;
   }
 }

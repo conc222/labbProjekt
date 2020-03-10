@@ -3,7 +3,6 @@ import { Fotspelare} from '../../models/fotspelare';
 import { FotspelareListaService} from '../services/fotspelare-lista.service';
 import { HttpClient} from '@angular/common/http';
 import {NgForm} from '@angular/forms';
-import {FirebaseCommandsService} from '../services/firebase-commands.service';
 import { Router} from '@angular/router';
 
 @Component({

@@ -10,7 +10,6 @@ import { NotfoundComponent} from './notfound/notfound.component';
 import { AddSpelareComponent} from './add-spelare/add-spelare.component';
 import { DetaljSpelareComponent} from './detalj-spelare/detalj-spelare.component';
 
-
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},

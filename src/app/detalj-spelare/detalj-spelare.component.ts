@@ -9,15 +9,14 @@ import { ActivatedRoute} from '@angular/router';
   styleUrls: ['./detalj-spelare.component.scss']
 })
 export class DetaljSpelareComponent implements OnInit {
-
   spelare: Fotspelare;
 
   constructor(private route: ActivatedRoute, private fotspelareService: FotspelareListaService) { }
 
   ngOnInit() {
     const name = this.route.snapshot.paramMap.get('name');
-    this.fotspelareService.getSpelareName(name).subscribe(f => this.spelare = f);
-    console.log(name);
+    this.fotspelareService.getSpelareName(name).subscribe(f =>  this.spelare = f);
+
   }
 
 }
