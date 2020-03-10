@@ -38,4 +38,9 @@ export class FotspelareListaService {
     this.spelareOne = this.spelareDoc.valueChanges();
     return this.spelareOne;
   }
+
+  deleteSpelare(id: string) {
+    return this.afs.collection('Fotspelare').doc(id).delete();
+  }
+
 }
