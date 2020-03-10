@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { ArenaComponent} from './arena/arena.component';
+import { PartnersComponent} from './partners/partners.component';
+import { OmossComponent} from './omoss/omoss.component';
 import { HomeComponent} from './home/home.component';
 import { SpelareComponent} from './spelare/spelare.component';
 import { ArenaComponent} from './arena/arena.component';

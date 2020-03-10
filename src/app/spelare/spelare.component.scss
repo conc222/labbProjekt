@@ -1,3 +1,22 @@
+img{
+  max-width: 80px;
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+
+
+.spelartabell{
+  width: 300px;
+  height: 300px;
+  position: relative;
+  vertical-align: auto;
+}
+.spelartabell img{
+  vertical-align: auto;
+  max-height: 80px;
+}
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
 .error {
   box-shadow: 0 0 5px;
