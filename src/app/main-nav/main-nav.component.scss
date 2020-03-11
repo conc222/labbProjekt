@@ -1,0 +1,66 @@
+.sidenav-container {
+  height: 100%;
+  a {
+    color: black;
+    text-decoration: none;
+    &:hover {
+      color: #cc122e;
+    }
+  }
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  background-color: rgb(66, 54, 111);
+  color: white;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.space {
+  flex: 1 1 auto;
+}
+
+.horiNav {
+  background-color: rgb(66, 54, 111);
+  justify-content: space-between;
+  color: white;
+  text-decoration: none;
+  transition: opacity 750ms;
+  opacity:  85%;
+
+  &:hover {
+    opacity: 100%;
+  }
+
+  a {
+    color: white;
+  }
+
+  mat-nav-list {
+    padding-right: 1rem;
+    display: flex;
+
+  mat-list-item {
+    padding: 1em;
+    list-style-type: none;
+    }
+  }
+}
+
+
+
+
+@media (max-width: 970px) {
+  mat-toolbar a {
+    display: none;
+  }
+}
