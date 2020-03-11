@@ -1,7 +1,5 @@
-<p>spelare works!</p>
-<div class="spelartabell" style="vertical-align: middle; display: inline-block">
-<table border="2">
-  <tbody>
+<!--<div class="spelartabell" style="vertical-align: middle; display: inline-block">
+<table class="tabellen">
   <tr>
     <th>Namn</th>
     <th>Efternamn</th>
@@ -17,14 +15,33 @@
     <td>Argentina</td>
     <td>forward</td>
   </tr>
-  </tbody>
 </table>
+</div>-->
+
+<div class="container">
+  <mat-list *ngFor="let e of spelare">
+    <div class="containerSpelare">
+      <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile rowspan="4"><img src="{{e.bild}}" alt=""></mat-grid-tile>
+        <mat-grid-tile >{{e.name}}</mat-grid-tile>
+        <mat-grid-tile rowspan="2">{{e.nummer}}</mat-grid-tile>
+        <mat-grid-tile >{{e.position}}</mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-list>
 </div>
-<p>
-  <ul>
+
+<!--<p>
+<ul>
   <li *ngFor="let f of spelare">
-    <a routerLink="/detalj-spelare/{{f.id}}"> {{f.name}} </a> personnr {{f.age}}
+    <a routerLink="/detalj-spelare/{{f.id}}"> {{f.name}} </a> personnr {{f.age}} bild: {{f.bild}}
+
   </li>
 </ul>
+<div *ngIf="spelare">
+  bilden: {{spelare}}
+  <script>console.log(spelare.bild)</script>
+</div>-->
 
 <a routerLink="/addspelare">Lägg till spelare</a>
+

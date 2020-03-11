@@ -1,5 +1,4 @@
-
-<header>
+<!--<header>
   <div class="container">
     <a href="#" routerLink="/home" class="logo">FC Barcerlona</a>
     <nav>
@@ -12,8 +11,40 @@
       </ul>
     </nav>
   </div>
-</header>
+</header>-->
 
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+<!--<mat-toolbar color="primary" class="navbar">
+  <div> <a href="#" routerLink="/home">FC Barcelona</a></div>
+  <div>
+    <nav>
+      <ul>
+        <li><a href="#" routerLink="/home">Hem</a> </li>
+        <li><a href="#" routerLink="/spelare">Spelare</a> </li>
+        <li><a href="#" routerLink="/arena">Arena</a> </li>
+        <li><a href="#" routerLink="/partners">Partners</a> </li>
+        <li><a href="#" routerLink="/omOss">Om oss</a> </li>
+      </ul>
+    </nav>
+  </div>
+</mat-toolbar>-->
+
+<!--<mat-toolbar color="primary" class="navbar">
+  <div>
+    <a href="#" routerLink="/home">FC Barcelona</a>
+  </div>
+      <mat-nav-list>
+        <a mat-list-item href="#" routerLink="/spelare">Spelare</a>
+        <a mat-list-item href="#" routerLink="/arena">Arena</a>
+        <a mat-list-item href="#" routerLink="/partners">Partners</a>
+        <a mat-list-item href="#" routerLink="/omOss">Om oss</a>
+        <a href="#" routerLink="/home"><mat-icon>home</mat-icon></a>
+      </mat-nav-list>
+</mat-toolbar>-->
+
+<app-main-nav>
+  <div class="layoutContainer">
+    <router-outlet></router-outlet>
+  </div>
+</app-main-nav>
+
+

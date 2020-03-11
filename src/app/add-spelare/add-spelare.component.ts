@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { Fotspelare} from '../../models/fotspelare';
 import { FotspelareListaService} from '../services/fotspelare-lista.service';
-import { HttpClient} from '@angular/common/http';
-import {NgForm} from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-add-spelare',

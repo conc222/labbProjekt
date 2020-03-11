@@ -11,22 +11,17 @@ import { ActivatedRoute, Router} from '@angular/router';
 export class DetaljSpelareComponent implements OnInit {
   spelare: Fotspelare;
 
-  constructor(private route: ActivatedRoute, private navigate: Router, private fotspelareService: FotspelareListaService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private fotspelareService: FotspelareListaService) { }
 
   ngOnInit() {
-    const name = this.route.snapshot.paramMap.get('name');
-    this.fotspelareService.getSpelareName(name).subscribe(f =>  this.spelare = f);
+    const id = this.route.snapshot.paramMap.get('name');
+    this.fotspelareService.getSpelareName(id).subscribe(f =>  this.spelare = f);
   }
 
   deletePlayer() {
     const id = this.route.snapshot.paramMap.get('name');
-    this.fotspelareService.deleteSpelare(id)
-    .then(
-      this.navigate.navigate(['/spelare']),
-      err => {
-        console.log(err);
-      }
-    );
+    this.fotspelareService.deleteSpelare(id);
+    this.router.navigate(['/spelare']);
   }
 
 }

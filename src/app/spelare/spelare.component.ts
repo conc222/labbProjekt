@@ -3,7 +3,7 @@ import { Fotspelare} from '../../models/fotspelare';
 import { FotspelareListaService} from '../services/fotspelare-lista.service';
 import { HttpClient} from '@angular/common/http';
 import {NgForm} from '@angular/forms';
-import { Router} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-spelare',

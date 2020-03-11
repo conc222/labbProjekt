@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
 img{
-  max-width: 80px;
   display: block;
   width: auto;
   height: auto;
 }
-
-
 
 .spelartabell{
   width: 300px;
@@ -17,8 +16,26 @@ img{
   vertical-align: auto;
   max-height: 80px;
 }
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
 .error {
   box-shadow: 0 0 5px;
   border-color: red;
 }
+.containerSpelare{
+  width: 300px;
+  height: 300px;
+  mat-grid-list {
+    //width: 350px;
+    mat-grid-tile {
+      width: 15px;
+      background: lightblue;
+      img {
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+
+      }
+    }
+  }
+}
+

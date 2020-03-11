@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 
-import { AppRoutingModule } from '../assets/images/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SpelareComponent } from './spelare/spelare.component';
@@ -19,6 +19,17 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule} from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModule} from './material/material.module';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -32,16 +43,27 @@ import { LoginComponent } from './login/login.component';
     PartnersComponent,
     NotfoundComponent,
     AddSpelareComponent,
-    LoginComponent
+    LoginComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MaterialModule,
+    MatGridListModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatMenuModule
   ],
   providers: [FotspelareListaService],
   bootstrap: [AppComponent]

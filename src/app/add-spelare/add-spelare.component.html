@@ -1,4 +1,4 @@
-does this work
+
 <form #spelForm="ngForm" (submit)="onSubmit(spelForm)">
   <label>Name</label><br>
   <input type="text" [(ngModel)]="newSpelare.name" name = "name" #spelareName ="ngModel" required minlength="2" [ngClass]="{'error' : spelareName.errors && spelareName.touched}"/>
@@ -54,5 +54,5 @@ does this work
   </span>
   <br><br>
 
-  <button [disabled]="!spelForm.form.valid">Send it</button>
+  <button mat-raised-button [disabled]="!spelForm.form.valid">Send it</button>
 </form>

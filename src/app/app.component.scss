@@ -1,0 +1,43 @@
+.navbar {
+  background-color: rgb(66, 54, 111);
+  justify-content: space-between;
+  opacity:  85%;
+  transition: opacity 750ms;
+  padding-right: 1rem;
+
+  &:hover {
+    opacity: 100%;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a.logo {
+    font-weight: bold;
+    color: white;
+  }
+  a.logo:hover{
+    color: white;
+    text-decoration: none;
+  }
+
+  mat-nav-list {
+    padding-right: 1rem;
+    display: flex;
+
+    mat-list-item {
+      padding: 1em;
+      color: white;
+      list-style-type: none;
+
+        &:hover {
+          color: #cc122e;
+          text-decoration: none;
+        }
+      }
+    mat-icon {
+      padding: 0.5em;
+    }
+  }
+}
