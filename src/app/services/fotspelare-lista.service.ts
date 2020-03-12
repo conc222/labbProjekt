@@ -6,9 +6,6 @@ import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestor
 import {map} from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })

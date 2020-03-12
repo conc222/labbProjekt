@@ -22,19 +22,22 @@ $primary: rgb(66, 54, 111);
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-
-/*body {
-  margin: 0;
-  font-family: 'Nunito', 'sans-serif';
-  font-size: 18px;
-}*/
-
 .container {
   padding: 2% 0 0 2%;
 }
+
 .mat-menu {
   background-color: rgb(21, 66, 132);
+  color: white;
   a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      color: #cc122e;
+    }
+  }
+  mat-icon {
     color: white;
     text-decoration: none;
     &:hover {
@@ -58,7 +61,7 @@ rödtyp: 204, 18, 46
 
 html, body {
   height: 100%;
-  margin: 0px
+  margin: 0;
 }
 
 body { margin: 0; font-family: Roboto, "Nunito", sans-serif; }

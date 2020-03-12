@@ -1,47 +1,13 @@
-<!--<div class="spelartabell" style="vertical-align: middle; display: inline-block">
-<table class="tabellen">
-  <tr>
-    <th>Namn</th>
-    <th>Efternamn</th>
-    <th>Ålder</th>
-    <th>Land</th>
-    <th>Position</th>
-    <td rowspan="2"><img alt="Bild" src="../../assets/images/Messi.png"/></td>
-  </tr>
-  <tr>
-    <td>Lionel</td>
-    <td>Messi</td>
-    <td>33</td>
-    <td>Argentina</td>
-    <td>forward</td>
-  </tr>
-</table>
-</div>-->
 
 <div class="container">
   <mat-list *ngFor="let e of spelare">
     <div class="containerSpelare">
       <mat-grid-list cols="2" rowHeight="2:1">
-        <mat-grid-tile rowspan="4"><img src="{{e.bild}}" alt=""></mat-grid-tile>
+        <a routerLink="/detalj-spelare/{{e.id}}"><mat-grid-tile rowspan="4"><img src="{{e.bild}}" alt=""></mat-grid-tile></a>
         <mat-grid-tile >{{e.name}}</mat-grid-tile>
-        <mat-grid-tile rowspan="2">{{e.nummer}}</mat-grid-tile>
+        <mat-grid-tile rowspan="2" style="font-size: 24px; font-weight: bold">{{e.nummer}}</mat-grid-tile>
         <mat-grid-tile >{{e.position}}</mat-grid-tile>
       </mat-grid-list>
     </div>
   </mat-list>
 </div>
-
-<!--<p>
-<ul>
-  <li *ngFor="let f of spelare">
-    <a routerLink="/detalj-spelare/{{f.id}}"> {{f.name}} </a> personnr {{f.age}} bild: {{f.bild}}
-
-  </li>
-</ul>
-<div *ngIf="spelare">
-  bilden: {{spelare}}
-  <script>console.log(spelare.bild)</script>
-</div>-->
-
-<a routerLink="/addspelare">Lägg till spelare</a>
-

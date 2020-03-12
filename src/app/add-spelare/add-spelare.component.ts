@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { Fotspelare} from '../../models/fotspelare';
 import { FotspelareListaService} from '../services/fotspelare-lista.service';
-import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-add-spelare',
@@ -10,18 +9,24 @@ import {MatButtonModule} from '@angular/material/button';
 })
 
 export class AddSpelareComponent implements OnInit {
+
+  constructor(private spelareService: FotspelareListaService) { }
+
   spelare: Fotspelare[];
   newSpelare: Fotspelare = {
     name: '',
     age: null,
-    personnr: null,
+    nummer: null,
     land: '',
     position: null,
     bild: ''
   };
+
   @ViewChild('spelForm') theForm: any;
 
-  constructor(private spelareService: FotspelareListaService) { }
+  controlBild(varede: Fotspelare) {
+    varede.bild.includes('gyazo' && '.png' || '.jpg' || '.jpeg');
+  }
 
   ngOnInit() {
     this.spelareService.getSpelare().subscribe(f => {
@@ -35,7 +40,7 @@ export class AddSpelareComponent implements OnInit {
     } else {
        this.spelareService.addSpelare(value);
        this.theForm.reset();
+       alert(value.name + ' spelare tillagd!!');
     }
   }
-
 }

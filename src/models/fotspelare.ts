@@ -1,7 +1,7 @@
 export class Fotspelare {
 
   // tslint:disable-next-line:variable-name
-  constructor(private _name?: string, private _age?: number, private _personnr?: number, private _land?: string, private _position?: number, private _bild?: string) {}
+  constructor(private _name?: string, private _age?: number, private _nummer?: number, private _land?: string, private _position?: number, private _bild?: string) {}
 
   get name(): string {
     return this._name;
@@ -35,12 +35,12 @@ export class Fotspelare {
     this._position = value;
   }
 
-  get personnr(): number {
-    return this._personnr;
+  get nummer(): number {
+    return this._nummer;
   }
 
-  set personnr(value: number) {
-    this._personnr = value;
+  set nummer(value: number) {
+    this._nummer = value;
   }
 
   get bild(): string {

@@ -9,10 +9,12 @@
   }
 }
 
+
 .sidenav .mat-toolbar {
   background: inherit;
   background-color: rgb(66, 54, 111);
   color: white;
+
 }
 
 .mat-toolbar.mat-primary {
@@ -29,10 +31,9 @@
   flex: 1 1 auto;
 }
 
-.horiNav {
+.horizNav {
   background-color: rgb(66, 54, 111);
   justify-content: space-between;
-  color: white;
   text-decoration: none;
   transition: opacity 750ms;
   opacity:  85%;
@@ -55,9 +56,6 @@
     }
   }
 }
-
-
-
 
 @media (max-width: 970px) {
   mat-toolbar a {

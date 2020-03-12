@@ -24,13 +24,13 @@ img{
 .containerSpelare{
   width: 300px;
   height: 300px;
+  padding-right: 20px;
+  padding-left: 50px;
+  padding-bottom: 10px;
   mat-grid-list {
-    //width: 350px;
     mat-grid-tile {
-      width: 15px;
       background: lightblue;
       img {
-        display: block;
         margin-top: auto;
         margin-bottom: auto;
 
@@ -38,4 +38,8 @@ img{
     }
   }
 }
-
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
