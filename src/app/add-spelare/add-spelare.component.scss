@@ -18,3 +18,53 @@ h1 {
   color: white;
 }
 
+::ng-deep .mat-form-field {
+
+  .mat-input-element {
+    color: white;
+  }
+  .mat-form-field-label {
+    color: white;
+  }
+  .mat-form-field-underline {
+    background-color: rgb(204, 18, 46);
+  }
+  .mat-form-field-ripple {
+    background-color: rgb(21, 66, 132);
+  }
+  .mat-form-field-outline {
+    color: white;
+  }
+}
+
+::ng-deep .mat-form-field.mat-focused {
+  .mat-form-field-label {
+    color: white;
+  }
+  .mat-input-element {
+    color: white;
+  }
+  .mat-form-field-outline {
+    color: rgb(66, 54, 111);
+  }
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid {
+  .mat-input-element {
+    color: cyan;
+  }
+  .mat-form-field-ripple {
+    background-color: #ff33cc;
+  }
+}
+/*färger:
+blåtyp: 21, 66, 132
+
+lilablå: 66, 54, 111
+
+mitten: 113, 42, 88
+
+rödlila: 161, 29, 66
+
+rödtyp: 204, 18, 46
+*/

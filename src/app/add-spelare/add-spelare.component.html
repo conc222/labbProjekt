@@ -1,14 +1,9 @@
-
-
-
-
-
 <form #spelForm="ngForm" (submit)="onSubmit(spelForm)">
   <h1 class="mat-display-2">Lägg till en spelare</h1>
   <mat-grid-list cols="1" rowHeight="2:1">
     <mat-grid-tile>
       <div class="formDiv">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
           <input matInput placeholder="Namesson" [(ngModel)]="newSpelare.name" name="name" #spelareName="ngModel" required [ngClass]="{'error' : spelareName.errors && spelareName.touched}">
           <mat-error *ngIf="(spelareName.dirty || spelareName.touched) && spelareName.hasError('required')" class="error">
@@ -19,7 +14,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="outline">
           <mat-label>Ålder</mat-label>
           <input matInput [(ngModel)]="newSpelare.age" name="age" #spelareAge="ngModel" required [ngClass]="{'error' : spelareAge.errors && spelareAge.touched}">
           <mat-error *ngIf="(spelareAge.dirty || spelareAge.touched) && spelareAge.hasError('required')" class="error">
@@ -27,7 +22,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="outline">
           <mat-label>Tröjnummer</mat-label>
           <input matInput [(ngModel)]="newSpelare.nummer" name="nummer" #spelarePersonnr="ngModel" required [ngClass]="{'error' : spelarePersonnr.errors && spelarePersonnr.touched}">
           <mat-error *ngIf="(spelarePersonnr.dirty || spelarePersonnr.touched) && spelarePersonnr.hasError('required')" class="error">
@@ -35,7 +30,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="outline">
         <mat-label>Land</mat-label>
           <input matInput [(ngModel)]="newSpelare.land" name="land" #spelareLand ="ngModel" required [ngClass]="{'error' : spelareLand.errors && spelareLand.touched}">
           <mat-error *ngIf="(spelareLand.dirty || spelareLand.touched) && spelareLand.hasError('required')" class="error">
@@ -43,7 +38,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="outline">
           <mat-label>Position</mat-label>
           <input matInput type="text" [(ngModel)]="newSpelare.position" name="position" #spelarePosition ="ngModel" required [ngClass]="{'error' : spelarePosition.errors && spelarePosition.touched}">
           <mat-error *ngIf="(spelarePosition.dirty || spelarePosition.touched) && spelarePosition.hasError('required')" class="error">
@@ -51,7 +46,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="outline">
         <mat-label>Bild</mat-label>
         <input matInput type="text" [(ngModel)]="newSpelare.bild" name="bild" #spelareBild ="ngModel" required [ngClass]="{'error' : spelareBild.errors && spelareBild.touched}">
         <mat-error *ngIf="(spelareBild.dirty || spelareBild.touched) && spelareBild.hasError('required')" class="error">
