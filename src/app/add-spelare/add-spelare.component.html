@@ -44,14 +44,6 @@
           </mat-error>
         </mat-form-field>
 
-        <!--<mat-form-field appearance="outline">
-          <mat-label>Position</mat-label>
-          <input matInput type="text" [(ngModel)]="newSpelare.position" name="position" #spelarePosition ="ngModel" required [ngClass]="{'error' : spelarePosition.errors && spelarePosition.touched}">
-          <mat-error *ngIf="(spelarePosition.dirty || spelarePosition.touched) && spelarePosition.hasError('required')" class="error">
-            Du måste skriva något i rutan!
-          </mat-error>
-        </mat-form-field>-->
-
         <mat-form-field appearance="outline">
           <mat-label>Position</mat-label>
           <mat-select [(ngModel)]="newSpelare.position" name="position" #spelarePosition="ngModel" required [ngClass]="{'error': spelarePosition.errors && spelarePosition.touched}">

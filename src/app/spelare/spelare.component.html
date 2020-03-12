@@ -1,21 +1,3 @@
-<!--<div class="container">
-  <mat-list *ngFor="let e of spelare">
-    <div class="containerSpelare">
-      <mat-grid-list cols="6" rowHeight="3rem">
-        <a routerLink="/detalj-spelare/{{e.id}}"><mat-grid-tile colspan="6" rowspan="5" class="bildContainer">
-          <img src="{{e.bild}}" alt=""></mat-grid-tile></a>
-        <mat-grid-tile colspan="3" rowspan="1">
-          {{e.name}}
-        </mat-grid-tile>
-&lt;!&ndash;        <mat-grid-tile rowspan="2" style="font-size: 24px; font-weight: bold">{{e.nummer}}</mat-grid-tile>&ndash;&gt;
-        <mat-grid-tile colspan="3" rowspan="1">
-          {{e.position}}
-        </mat-grid-tile>
-      </mat-grid-list>
-    </div>
-  </mat-list>
-</div>-->
-
 <div class="container">
   <mat-list *ngFor="let e of spelare">
       <mat-card class="matCard">
