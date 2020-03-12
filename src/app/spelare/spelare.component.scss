@@ -43,3 +43,13 @@ img{
   flex-wrap: wrap;
   justify-content: left;
 }
+
+.matCard {
+  width: auto;
+  height: auto;
+  margin: 20px;
+  img {
+    height: 340px;
+    width: 240px;
+  }
+}

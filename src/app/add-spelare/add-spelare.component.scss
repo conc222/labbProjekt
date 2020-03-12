@@ -6,7 +6,15 @@
   width: 100%;
 }
 
-.container {
+form {
+  background-image: url("../../assets/images/addSpelare.jpg");
+}
+.mat-display-2 {
+  margin: 0;
+}
+h1 {
   display: flex;
   justify-content: center;
+  color: white;
 }
+
