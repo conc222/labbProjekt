@@ -2,6 +2,11 @@ import { Component, OnInit, ViewChild} from '@angular/core';
 import { Fotspelare} from '../../models/fotspelare';
 import { FotspelareListaService} from '../services/fotspelare-lista.service';
 
+interface positions {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-add-spelare',
   templateUrl: './add-spelare.component.html',
@@ -21,6 +26,12 @@ export class AddSpelareComponent implements OnInit {
     position: null,
     bild: ''
   };
+  positioner: positions[] = [
+    {value: 'molvakt', viewValue: 'Målvakt'},
+    {value: 'back', viewValue: 'Back'},
+    {value: 'mitt', viewValue: 'Mittfältare'},
+    {value: 'forward', viewValue: 'Forward'}
+  ];
 
   @ViewChild('spelForm') theForm: any;
 

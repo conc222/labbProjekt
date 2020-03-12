@@ -19,9 +19,9 @@ h1 {
 }
 
 ::ng-deep .mat-form-field {
-
   .mat-input-element {
     color: white;
+    caret-color: white;
   }
   .mat-form-field-label {
     color: white;
@@ -35,7 +35,12 @@ h1 {
   .mat-form-field-outline {
     color: white;
   }
+  .mat-select-value {
+    color: white;
+  }
 }
+
+
 
 ::ng-deep .mat-form-field.mat-focused {
   .mat-form-field-label {
@@ -45,16 +50,24 @@ h1 {
     color: white;
   }
   .mat-form-field-outline {
-    color: rgb(66, 54, 111);
+    color: white;
+  }
+  .mat-select-value {
+    color: white;
   }
 }
 
 ::ng-deep .mat-form-field.mat-form-field-invalid {
   .mat-input-element {
-    color: cyan;
+    color: red;
   }
   .mat-form-field-ripple {
     background-color: #ff33cc;
+  }
+  .mat-error {
+    color: cyan;
+    background-color: black;
+    width: 235px;
   }
 }
 /*färger:

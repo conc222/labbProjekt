@@ -5,28 +5,34 @@
       <div class="formDiv">
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
-          <input matInput placeholder="Namesson" [(ngModel)]="newSpelare.name" name="name" #spelareName="ngModel" required [ngClass]="{'error' : spelareName.errors && spelareName.touched}">
+          <input matInput placeholder="Namesson" [(ngModel)]="newSpelare.name" name="name" #spelareName="ngModel" required minlength="3" [ngClass]="{'error' : spelareName.errors && spelareName.touched}">
           <mat-error *ngIf="(spelareName.dirty || spelareName.touched) && spelareName.hasError('required')" class="error">
             Du måste skriva något i rutan!
           </mat-error>
-          <mat-error *ngIf="(spelareName.dirty || spelareName.touched) && spelareName.hasError('required')" class="error">
+          <mat-error *ngIf="(spelareName.dirty || spelareName.touched) && spelareName.hasError('minlength')" class="error">
             Längre namn
           </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Ålder</mat-label>
-          <input matInput [(ngModel)]="newSpelare.age" name="age" #spelareAge="ngModel" required [ngClass]="{'error' : spelareAge.errors && spelareAge.touched}">
+          <input matInput [(ngModel)]="newSpelare.age" name="age" #spelareAge="ngModel" required pattern="[0-9]*" min="18" maxlength="2" [ngClass]="{'error' : spelareAge.errors && spelareAge.touched}">
           <mat-error *ngIf="(spelareAge.dirty || spelareAge.touched) && spelareAge.hasError('required')" class="error">
             Du måste skriva något i rutan!
+          </mat-error>
+          <mat-error *ngIf="(spelareAge.dirty || spelareAge.touched) && spelareAge.hasError('pattern')" class="error">
+            Måste vara en siffra!
           </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Tröjnummer</mat-label>
-          <input matInput [(ngModel)]="newSpelare.nummer" name="nummer" #spelarePersonnr="ngModel" required [ngClass]="{'error' : spelarePersonnr.errors && spelarePersonnr.touched}">
+          <input matInput [(ngModel)]="newSpelare.nummer" name="nummer" #spelarePersonnr="ngModel" required pattern="[0-9]*" maxlength="2" [ngClass]="{'error' : spelarePersonnr.errors && spelarePersonnr.touched}">
           <mat-error *ngIf="(spelarePersonnr.dirty || spelarePersonnr.touched) && spelarePersonnr.hasError('required')" class="error">
             Du måste skriva något i rutan!
+          </mat-error>
+          <mat-error *ngIf="(spelareAge.dirty || spelareAge.touched) && spelareAge.hasError('pattern')" class="error">
+            Måste vara en siffra!
           </mat-error>
         </mat-form-field>
 
@@ -38,23 +44,38 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
+        <!--<mat-form-field appearance="outline">
           <mat-label>Position</mat-label>
           <input matInput type="text" [(ngModel)]="newSpelare.position" name="position" #spelarePosition ="ngModel" required [ngClass]="{'error' : spelarePosition.errors && spelarePosition.touched}">
           <mat-error *ngIf="(spelarePosition.dirty || spelarePosition.touched) && spelarePosition.hasError('required')" class="error">
             Du måste skriva något i rutan!
           </mat-error>
+        </mat-form-field>-->
+
+        <mat-form-field appearance="outline">
+          <mat-label>Position</mat-label>
+          <mat-select [(ngModel)]="newSpelare.position" name="position" #spelarePosition="ngModel" required [ngClass]="{'error': spelarePosition.errors && spelarePosition.touched}">
+            <mat-option *ngFor="let pos of positioner" [value]="pos.value">
+              {{pos.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="(spelarePosition.dirty || spelarePosition.touched) && spelarePosition.hasError('required')" class="error">
+            Du måste välja ett alternativ!
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
         <mat-label>Bild</mat-label>
-        <input matInput type="text" [(ngModel)]="newSpelare.bild" name="bild" #spelareBild ="ngModel" required [ngClass]="{'error' : spelareBild.errors && spelareBild.touched}">
+        <input matInput [(ngModel)]="newSpelare.bild" name="bild" #spelareBild ="ngModel" required pattern="https://i.gyazo.com/.+.png" [ngClass]="{'error' : spelareBild.errors && spelareBild.touched}">
         <mat-error *ngIf="(spelareBild.dirty || spelareBild.touched) && spelareBild.hasError('required')" class="error">
           Du måste skriva något i rutan!
         </mat-error>
+          <mat-error *ngIf="(spelareBild.dirty || spelareBild.touched) && spelareBild.hasError('pattern')" class="error">
+            Det måste vara en gyazo länk med ändelsen .png!
+          </mat-error>
         </mat-form-field>
 
-        <button mat-raised-button [disabled]="!spelForm.form.valid">Send it</button>
+        <button mat-raised-button [disabled]="!spelForm.form.valid">Lägg till</button>
       </div>
     </mat-grid-tile>
   </mat-grid-list>
