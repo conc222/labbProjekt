@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {map} from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
+import {map} from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +16,9 @@ export class AuthService {
   }
   getAuth() {
     return this.afAuth.authState.pipe(map(auth => auth));
+  }
+
+  logout() {
+    this.afAuth.auth.signOut();
   }
 }

@@ -9,6 +9,8 @@ import { NotfoundComponent} from './notfound/notfound.component';
 import { AddSpelareComponent} from './add-spelare/add-spelare.component';
 import { DetaljSpelareComponent} from './detalj-spelare/detalj-spelare.component';
 import {LoginComponent} from './login/login.component';
+import {AuthguardService} from './services/AuthGuard.service';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -16,7 +18,7 @@ const routes: Routes = [
   {path: 'arena', component: ArenaComponent},
   {path: 'partners', component: PartnersComponent},
   {path: 'omOss', component: OmossComponent},
-  {path: 'addspelare', component: AddSpelareComponent},
+  {path: 'addspelare', component: AddSpelareComponent, canActivate: [AuthguardService]},
   {path: 'spelare', component: SpelareComponent},
   {path: 'detalj-spelare/:name', component: DetaljSpelareComponent},
   {path: 'login', component: LoginComponent},
@@ -24,7 +26,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  providers: [AuthguardService]
 })
 export class AppRoutingModule { }

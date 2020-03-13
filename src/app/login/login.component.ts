@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
 import {AuthService} from '../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,22 +12,30 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   error: string;
+  isLoggedin: boolean;
+  User: string;
 
   constructor(private authService: AuthService, private router: Router) {
   }
-
   ngOnInit() {
     this.authService.getAuth().subscribe(auth => {
       if (auth) {
-        this.router.navigate(['/']);
+        this.router.navigate(['/login']);
+      }
+    });
+    this.authService.getAuth().subscribe(auth => {
+      if (auth) {
+        this.isLoggedin = true;
+        this.User = auth.email;
+      } else {
+        this.isLoggedin = false;
       }
     });
   }
-
   onSubmit() {
     this.authService.Login(this.email, this.password)
       .then(res => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/addspelare']);
       })
       .catch(err => {
         this.error = err;
