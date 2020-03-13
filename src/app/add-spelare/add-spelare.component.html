@@ -1,7 +1,5 @@
 <form #spelForm="ngForm" (submit)="onSubmit(spelForm)">
   <h1 class="mat-display-2">Lägg till en spelare</h1>
-  <mat-grid-list cols="1" rowHeight="2:1">
-    <mat-grid-tile>
       <div class="formDiv">
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
@@ -69,7 +67,5 @@
 
         <button mat-raised-button [disabled]="!spelForm.form.valid">Lägg till</button>
       </div>
-    </mat-grid-tile>
-  </mat-grid-list>
 </form>
 

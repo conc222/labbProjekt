@@ -1,0 +1,35 @@
+* {box-sizing:border-box}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+.text {
+  color: black;
+  font-size: 1rem;
+  text-align: left;
+
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .2}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .2}
+  to {opacity: 1}
+}

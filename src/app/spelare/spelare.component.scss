@@ -1,32 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
 
-img{
-  display: block;
-  width: auto;
-  height: auto;
-}
-
-.spelartabell{
-  width: 300px;
-  height: 300px;
-  position: relative;
-  vertical-align: auto;
-}
-.spelartabell img{
-  vertical-align: auto;
-  max-height: 80px;
-}
-
-.error {
-  box-shadow: 0 0 5px;
-  border-color: red;
-}
-
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
 }
+
 
 .matCard {
   color: white;
