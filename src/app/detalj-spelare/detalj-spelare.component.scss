@@ -1,0 +1,72 @@
+
+
+.spelarbild{
+  background-attachment: fixed;
+  margin: 0;
+  height: auto;
+  text-align: center;
+  display: block;
+  background-size: 90%;
+  padding: 0;
+  filter: brightness(70%);
+  -webkit-filter: brightness(120%);
+  -moz-filter: brightness(70%);
+  -o-filter: brightness(70%);
+
+}
+.scroller{
+  text-align: center;
+  background: linear-gradient(90deg,#cd122d,#154284);
+  padding: 30px;
+  color: aliceblue;
+  font-size: 50px;
+  font-family: cursive,sans-serif;
+}
+.scroller2{
+  font-size: 70px;
+  text-align: center;
+  padding: 30px;
+  margin: 0;
+  background: linear-gradient(90deg,#cd122d,#154284);
+  font-family: cursive,sans-serif;
+
+}
+
+.allinfo{
+  display: flex;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+}
+.info{
+  display: flex;
+  margin: 10px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.textinfo {
+  padding: 30px;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+
+}
+h1{
+font-size: 50px;
+  margin: 10px;
+  color: white;
+  font-family: cursive,sans-serif;
+}
+.metainfo{
+  text-align: center;
+}
+.tabort{
+  font-size: 30px;
+}
+.tabort:hover{
+  color: white;
+}
+
+

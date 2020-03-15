@@ -6,13 +6,16 @@
   background-image: url("../../assets/images/piquesamarbete.jpg");
   background-size: 100%;
   padding: 0;
+  filter: brightness(70%);
+  -webkit-filter: brightness(120%);
+  -moz-filter: brightness(70%);
+  -o-filter: brightness(70%);
 }
 .gallery {
   margin: auto;
   border: 100px;
   float: left;
   width: 13.5%;
-
 }
 
 .gallery:hover {

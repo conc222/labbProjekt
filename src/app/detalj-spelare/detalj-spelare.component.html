@@ -1,13 +1,32 @@
-<p>detalj-spelare works!</p>
 
-
-<div *ngIf="spelare">
-
-  Name: {{spelare.name}}
-  Age: {{spelare.age}}
-  Land: {{spelare.land}}
-  Position: {{spelare.position}}
-  Tröjnummer: {{spelare.nummer}}
-  bild: {{spelare.bild}}
-  <button mat-button (click)="deletePlayer()">Ta bort<mat-icon>delete</mat-icon></button>
+<header class="scroller">
+  {{spelare.name}}
+</header>
+<body class="spelarbild">
+  <img src="{{spelare.bild}}">
+</body>
+<header class="scroller2">
+<div class="info" *ngIf="spelare">
+<div class="allinfo">
+  <div class="metainfo">
+  <h1>Ålder:</h1>
+    <div class="textinfo">{{spelare.age}}</div>
+  </div>
+  <div class="metainfo">
+    <h1>Land:</h1>
+    <div class="textinfo">{{spelare.land}}</div>
+  </div>
+  <div class="metainfo">
+    <h1>Position:</h1>
+    <div class="textinfo">{{spelare.position}}</div>
+  </div>
+  <div class="metainfo">
+    <h1>Tröjnummer:</h1>
+    <div class="textinfo">{{spelare.nummer}}</div>
+  </div>
 </div>
+</div>
+  <div>
+    <button class="tabort" mat-button (click) ="deletePlayer()">Ta bort<mat-icon>delete</mat-icon></button>
+  </div>
+</header>

@@ -9,10 +9,16 @@ import { ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./detalj-spelare.component.scss']
 })
 export class DetaljSpelareComponent implements OnInit {
-  spelare: Fotspelare;
 
   constructor(private route: ActivatedRoute, private router: Router, private fotspelareService: FotspelareListaService) { }
-
+  spelare: Fotspelare = {
+    name: '',
+    age: null,
+    nummer: null,
+    land: '',
+    position: null,
+    bild: ''
+  };
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('name');
     this.fotspelareService.getSpelareName(id).subscribe(f =>  this.spelare = f);
@@ -23,5 +29,4 @@ export class DetaljSpelareComponent implements OnInit {
     this.fotspelareService.deleteSpelare(id);
     this.router.navigate(['/spelare']);
   }
-
 }

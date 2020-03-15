@@ -1,9 +1,12 @@
-<h2>Please login</h2>
-<form (submit)="onSubmit()">
-  <label>E-mail: </label><input type="email" [(ngModel)]="email" name="email" required /><br/>
-  <label>Password: </label><input type="password" [(ngModel)]="password" name="password"/><br/>
+<body>
+<div class="wrapper">
+<h1>Fyll i för att logga in</h1>
+<form class="login-form" (submit)="onSubmit()">
+  <label>E-mail: </label><br/><input type="email" [(ngModel)]="email" name="email" required /><br/>
+  <label>Password: </label><br/><input type="password" [(ngModel)]="password" name="password"/><br/>
   <br/>
-  <input type="submit" value="Login"/><br/>
+  <input class="loginknapp" type="submit" value="Logga in"/><br/>
   <span *ngIf="error">{{ error }}</span>
 </form>
-
+</div>
+</body>

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.authService.getAuth().subscribe(auth => {
       if (auth) {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       }
     });
     this.authService.getAuth().subscribe(auth => {
@@ -35,7 +35,8 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.authService.Login(this.email, this.password)
       .then(res => {
-        this.router.navigate(['/addspelare']);
+        console.log(res);
+        this.router.navigateByUrl('/addspelare');
       })
       .catch(err => {
         this.error = err;

@@ -25,5 +25,4 @@ export class SpelareComponent implements OnInit {
   visaDetaljSpelare(spelare) {
     this.route.navigate(['/detalj-spelare/' + spelare.payload.doc.id]);
   }
-
 }
