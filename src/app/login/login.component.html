@@ -1,12 +1,18 @@
-<body>
-<div class="wrapper">
-<h1>Fyll i för att logga in</h1>
-<form class="login-form" (submit)="onSubmit()">
-  <label>E-mail: </label><br/><input type="email" [(ngModel)]="email" name="email" required /><br/>
-  <label>Password: </label><br/><input type="password" [(ngModel)]="password" name="password"/><br/>
-  <br/>
-  <input class="loginknapp" type="submit" value="Logga in"/><br/>
-  <span *ngIf="error">{{ error }}</span>
+<form  class="login-form" (submit)="onSubmit()">
+  <h1>Fyll i för att logga in</h1>
+  <div class="wrapper">
+
+  <mat-form-field appearance="outline">
+    <mat-label>E-mail</mat-label>
+    <input matInput placeholder="mail@maila.com" [(ngModel)]="email" name="email" type="email" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+  <mat-label>Lösenord</mat-label>
+  <input matInput placeholder="password" [(ngModel)]="password" name="password" type="password" required>
+  </mat-form-field>
+
+  <input class="loginknapp" type="submit" value="Logga in">
+  <span *ngIf="error" class="error">{{ error }}</span>
+  </div>
 </form>
-</div>
-</body>

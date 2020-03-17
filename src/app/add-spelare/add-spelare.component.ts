@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild} from '@angular/core';
 import { Fotspelare} from '../../models/fotspelare';
 import { FotspelareListaService} from '../services/fotspelare-lista.service';
 
+// tslint:disable-next-line:class-name
 interface positions {
   value: string;
   viewValue: string;
@@ -16,8 +17,6 @@ interface positions {
 export class AddSpelareComponent implements OnInit {
 
   constructor(private spelareService: FotspelareListaService) { }
-
-  spelare: Fotspelare[];
   newSpelare: Fotspelare = {
     name: '',
     age: null,
@@ -27,23 +26,15 @@ export class AddSpelareComponent implements OnInit {
     bild: ''
   };
   positioner: positions[] = [
-    {value: 'molvakt', viewValue: 'Målvakt'},
-    {value: 'back', viewValue: 'Back'},
-    {value: 'mitt', viewValue: 'Mittfältare'},
-    {value: 'forward', viewValue: 'Forward'}
+    {value: 'Målvakt', viewValue: 'Målvakt'},
+    {value: 'Back', viewValue: 'Back'},
+    {value: 'Mittfältare', viewValue: 'Mittfältare'},
+    {value: 'Forward', viewValue: 'Forward'}
   ];
 
   @ViewChild('spelForm') theForm: any;
 
-  controlBild(varede: Fotspelare) {
-    varede.bild.includes('gyazo' && '.png' || '.jpg' || '.jpeg');
-  }
-
-  ngOnInit() {
-    this.spelareService.getSpelare().subscribe(f => {
-      this.spelare = f;
-    });
-  }
+  ngOnInit() {}
 
   onSubmit({value, valid}: {value: Fotspelare, valid: boolean}) {
     if (!valid) {
@@ -51,7 +42,7 @@ export class AddSpelareComponent implements OnInit {
     } else {
        this.spelareService.addSpelare(value);
        this.theForm.reset();
-       alert(value.name + ' spelare tillagd!!');
+       alert(value.name + ' har blivit tillagd!!');
     }
   }
 }

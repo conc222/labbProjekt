@@ -1,8 +1,6 @@
-body {
-  background-image: url("../../assets/images/Camp nou1.jpg");
-  margin:0px;
-  font-family: 'Ubuntu', sans-serif;
-  background-size: 100%;
+form {
+  background-image: url("../../assets/images/login.jpg");
+  background-size: cover;
 }
 .wrapper{
   text-align: center;
@@ -11,16 +9,17 @@ body {
   padding: 130px;
 }
 
+.error {
+  color: red;
+}
+.wrapper > * {
+  width: 100%;
+}
+
 h1 {
   color: white;
   text-align:center;
   font-size:300%;
-}
-label{
-  color: white;
-  box-shadow:0px 0px 10px #000;
-  height: 300px;
-  width: 300px;
 }
 
 .login-form {
@@ -36,10 +35,70 @@ label{
   border:1px solid #f2f2f2;
   border-radius:20px;
   color: black;
-  text-transform:uppercase;
   font-family: 'Ubuntu', sans-serif;
   cursor:pointer;
 }
 .loginknapp:hover{
   background-color: #cc122e;
+}
+::ng-deep .mat-form-field {
+  .mat-input-element {
+    color: white;
+    caret-color: white;
+  }
+  .mat-form-field-label {
+    color: white;
+  }
+  .mat-form-field-underline {
+    background-color: rgb(204, 18, 46);
+  }
+  .mat-form-field-ripple {
+    background-color: rgb(21, 66, 132);
+  }
+  .mat-form-field-outline {
+    color: white;
+  }
+  .mat-select-value {
+    color: white;
+  }
+  .mat-select-placeholder {
+    color: #721c24;
+  }
+}
+
+
+
+::ng-deep .mat-form-field.mat-focused {
+  .mat-form-field-label {
+    color: white;
+  }
+  .mat-input-element {
+    color: white;
+  }
+  .mat-form-field-outline {
+    color: white;
+  }
+  .mat-select-value {
+    color: white;
+  }
+  .mat-select-placeholder {
+    color: #721c24;
+  }
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid {
+  .mat-input-element {
+    color: red;
+  }
+  .mat-form-field-ripple {
+    background-color: #ff33cc;
+  }
+  .mat-error {
+    color: cyan;
+    background-color: black;
+    width: 235px;
+  }
+  .mat-select-placeholder {
+    color: #721c24;
+  }
 }

@@ -35,7 +35,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
-import {SlideshowModule} from 'ng-simple-slideshow';
 
 @NgModule({
   declarations: [
@@ -73,8 +72,7 @@ import {SlideshowModule} from 'ng-simple-slideshow';
     MatInputModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatSelectModule,
-    SlideshowModule
+    MatSelectModule
   ],
   providers: [FotspelareListaService],
   bootstrap: [AppComponent]

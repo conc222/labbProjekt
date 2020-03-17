@@ -1,7 +1,5 @@
-
-
 .spelarbild{
-  background-attachment: fixed;
+  //background-attachment: fixed;
   margin: 0;
   height: auto;
   text-align: center;
@@ -12,7 +10,6 @@
   -webkit-filter: brightness(120%);
   -moz-filter: brightness(70%);
   -o-filter: brightness(70%);
-
 }
 .scroller{
   text-align: center;
@@ -29,13 +26,12 @@
   margin: 0;
   background: linear-gradient(90deg,#cd122d,#154284);
   font-family: cursive,sans-serif;
-
 }
 
 .allinfo{
   display: flex;
   width: 100%;
-  text-align: left;
+  text-align: center;
   padding: 10px;
 }
 .info{
@@ -51,10 +47,9 @@
   text-align: center;
   font-size: 50px;
   color: white;
-
 }
 h1{
-font-size: 50px;
+  font-size: 50px;
   margin: 10px;
   color: white;
   font-family: cursive,sans-serif;

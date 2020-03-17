@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {IImage} from 'ng-simple-slideshow';
 
 @Component({
   selector: 'app-arena',
@@ -23,29 +22,7 @@ export class ArenaComponent implements OnInit {
     }, 6000);
   }
 
-  /*__FunctionSlide() {
-    const slides = Array.from(document.getElementsByClassName('mall-show-slide'));
-    if (slides === []) {
-      this.Repeat();
-    }
-    for (const x of slides) {
-      const y = x as HTMLElement;
-      y.style.display = 'none';
-    }
-    if (this.startIndex > slides.length - 1) {
-      this.startIndex = 0;
-      const slide = slides[this.startIndex] as HTMLElement;
-      slide.style.display = 'block';
-      this.startIndex++;
-    } else {
-
-      const slide = slides[this.startIndex] as HTMLElement;
-      slide.style.display = 'block';
-      this.startIndex++;
-    }
-  }*/
    showSlides() {
-
      let i;
      const slides = document.getElementsByClassName('mySlides');
      for (i = 0; i < slides.length; i++) {

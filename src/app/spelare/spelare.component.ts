@@ -1,9 +1,5 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
-import { Fotspelare} from '../../models/fotspelare';
+import { Component, OnInit} from '@angular/core';
 import { FotspelareListaService} from '../services/fotspelare-lista.service';
-import { HttpClient} from '@angular/common/http';
-import {FormControl, NgForm, Validators} from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-spelare',
@@ -14,15 +10,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class SpelareComponent implements OnInit {
   spelare: Array<any>;
 
-  constructor(private spelareService: FotspelareListaService,  private route: Router) { }
+  constructor(private spelareService: FotspelareListaService) { }
 
   ngOnInit() {
     this.spelareService.getSpelare().subscribe(result => {
       this.spelare = result;
     });
-  }
-
-  visaDetaljSpelare(spelare) {
-    this.route.navigate(['/detalj-spelare/' + spelare.payload.doc.id]);
   }
 }

@@ -1,10 +1,9 @@
-
 <header class="scroller">
   {{spelare.name}}
 </header>
-<body class="spelarbild">
-  <img src="{{spelare.bild}}">
-</body>
+<div class="spelarbild">
+  <img src="{{spelare.bild}}" alt="{{spelare.name}} bild">
+</div>
 <header class="scroller2">
 <div class="info" *ngIf="spelare">
 <div class="allinfo">
@@ -27,6 +26,6 @@
 </div>
 </div>
   <div>
-    <button class="tabort" mat-button (click) ="deletePlayer()">Ta bort<mat-icon>delete</mat-icon></button>
+    <button *ngIf="isLoggedin" class="tabort" mat-button (click) ="deletePlayer()">Ta bort<mat-icon>delete</mat-icon></button>
   </div>
 </header>

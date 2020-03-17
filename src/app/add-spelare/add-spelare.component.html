@@ -3,7 +3,7 @@
       <div class="formDiv">
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
-          <input matInput placeholder="Namesson" [(ngModel)]="newSpelare.name" name="name" #spelareName="ngModel" required minlength="3" [ngClass]="{'error' : spelareName.errors && spelareName.touched}">
+          <input type="text" matInput placeholder="Namesson" [(ngModel)]="newSpelare.name" name="name" #spelareName="ngModel" required minlength="3" [ngClass]="{'error' : spelareName.errors && spelareName.touched}">
           <mat-error *ngIf="(spelareName.dirty || spelareName.touched) && spelareName.hasError('required')" class="error">
             Du måste skriva något i rutan!
           </mat-error>
@@ -36,7 +36,7 @@
 
         <mat-form-field appearance="outline">
         <mat-label>Land</mat-label>
-          <input matInput [(ngModel)]="newSpelare.land" name="land" #spelareLand ="ngModel" required [ngClass]="{'error' : spelareLand.errors && spelareLand.touched}">
+          <input type="text" matInput [(ngModel)]="newSpelare.land" name="land" #spelareLand ="ngModel" required [ngClass]="{'error' : spelareLand.errors && spelareLand.touched}">
           <mat-error *ngIf="(spelareLand.dirty || spelareLand.touched) && spelareLand.hasError('required')" class="error">
             Du måste skriva något i rutan!
           </mat-error>
@@ -56,7 +56,7 @@
 
         <mat-form-field appearance="outline">
         <mat-label>Bild</mat-label>
-        <input matInput [(ngModel)]="newSpelare.bild" name="bild" #spelareBild ="ngModel" required pattern="https://i.gyazo.com/.+.png" [ngClass]="{'error' : spelareBild.errors && spelareBild.touched}">
+        <input matInput [(ngModel)]="newSpelare.bild" name="bild" #spelareBild ="ngModel" required pattern="https://i.gyazo.com/.+" [ngClass]="{'error' : spelareBild.errors && spelareBild.touched}">
         <mat-error *ngIf="(spelareBild.dirty || spelareBild.touched) && spelareBild.hasError('required')" class="error">
           Du måste skriva något i rutan!
         </mat-error>

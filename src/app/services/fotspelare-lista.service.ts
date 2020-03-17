@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Fotspelare} from '../../models/fotspelare';
 import { Observable} from 'rxjs';
-import { of } from 'rxjs';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {map} from 'rxjs/operators';
-import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +40,5 @@ export class FotspelareListaService {
   deleteSpelare(id: string) {
     return this.afs.collection('Fotspelare').doc(id).delete();
   }
-
 }
 
